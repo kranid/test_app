@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>test_app</title>
+<script type="text/javascript" src="/js/jquery.js" ></script>
+<script type="text/javascript" src="/js/message.js" ></script> 
+</head>
+<body>
+
+<?php
+echo $this->form;
+?>
+<table id="tMessages" name="tMessages">
+<?php
+
+if ($this->listMessage)
+foreach ($this->listMessage as $message)
+{
+echo '<tr>';
+echo '<td>'.$this->escape($message['date']).'</td>';
+echo '<td>'.$this->escape($message['username']).': </td>';
+echo '<td>'.$this->escape($message['message']).'</td>';
+echo '</tr>';
+}
+?>
+</table>
+</body>
+</html>
